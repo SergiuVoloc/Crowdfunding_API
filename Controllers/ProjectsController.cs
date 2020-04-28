@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Crowdfunding_API.Data;
-using Crowdfunding_API.Models;
+using Crowdfunding_API.Entities;
 
 namespace Crowdfunding_API.Controllers
 {
@@ -14,21 +13,22 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class ProjectsController : ControllerBase
     {
-        private readonly ProjectsDB _context;
+        private readonly ApplicationDBContext _context;
 
-        public ProjectsController(ProjectsDB context)
+        public ProjectsController(ApplicationDBContext context)
         {
             _context = context;
         }
 
-        // GET: api/Projects_DB_
+        // api/Projects
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Project>>> GetProject()
         {
-            return await _context.Project.ToListAsync();
+            return await _context.Project.AsNoTracking().ToListAsync();
+            
         }
 
-        // GET: api/Projects_DB_/5
+        // GET: api/Projects/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Project>> GetProject(int id)
         {
@@ -42,9 +42,7 @@ namespace Crowdfunding_API.Controllers
             return project;
         }
 
-        // PUT: api/Projects_DB_/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+        // PUT: api/Projects/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProject(int id, Project project)
         {
@@ -74,9 +72,7 @@ namespace Crowdfunding_API.Controllers
             return NoContent();
         }
 
-        // POST: api/Projects_DB_
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+        // POST: api/Projects
         [HttpPost]
         public async Task<ActionResult<Project>> PostProject(Project project)
         {
@@ -89,7 +85,7 @@ namespace Crowdfunding_API.Controllers
 
         }
 
-        // DELETE: api/Projects_DB_/5
+        // DELETE: api/Projects/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult<Project>> DeleteProject(int id)
         {

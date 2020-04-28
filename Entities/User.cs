@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Crowdfunding_API.Models
+namespace Crowdfunding_API.Entities
 {
     public class User
     {

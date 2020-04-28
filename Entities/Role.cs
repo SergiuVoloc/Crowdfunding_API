@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Crowdfunding_API.Models
+namespace Crowdfunding_API.Entities
 {
     public class Role
     {

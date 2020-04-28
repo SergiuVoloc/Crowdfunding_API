@@ -11,7 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using Crowdfunding_API.Data;
+using MoviesAPI.Filters;
+using AutoMapper;
 
 namespace Crowdfunding_API
 {
@@ -27,12 +28,21 @@ namespace Crowdfunding_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
-            services.AddDbContext<ProjectsDB>(options =>
+            services.AddDbContext<ApplicationDBContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DBContext")));
 
-         
+            //services.AddAutoMapper(typeof(Startup)); use later
+
+
+
+
+
+
+            services.AddControllers(options => {
+                options.Filters.Add(typeof(MyExceptionFilter));
+            })
+                .AddNewtonsoftJson()
+                .AddXmlDataContractSerializerFormatters();
 
         }
 

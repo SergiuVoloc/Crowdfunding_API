@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace Crowdfunding_API.Models
+namespace Crowdfunding_API.Entities
 {
     public class Project
     {
@@ -23,7 +23,7 @@ namespace Crowdfunding_API.Models
         public string Country { get; set; }
 
         [Required]
-        //[CreditCard] check how to use correctly
+        [CreditCard]  // 16 digits
         public long  Account_Number { get; set; }
 
         [DataType(DataType.Date)]
