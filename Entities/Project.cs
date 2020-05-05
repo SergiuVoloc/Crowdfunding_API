@@ -23,7 +23,7 @@ namespace Crowdfunding_API.Entities
         public string Country { get; set; }
 
         [Required]
-        [CreditCard]  // 16 digits
+        //[CreditCard]  // 16 digits
         public long  Account_Number { get; set; }
 
         [DataType(DataType.Date)]

@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using MoviesAPI.Filters;
 using AutoMapper;
 
+
 namespace Crowdfunding_API
 {
     public class Startup
@@ -31,8 +32,7 @@ namespace Crowdfunding_API
             services.AddDbContext<ApplicationDBContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DBContext")));
 
-            //services.AddAutoMapper(typeof(Startup)); use later
-
+            services.AddAutoMapper(typeof(Startup));
 
 
 

@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Crowdfunding_API.Entities;
+using Microsoft.Extensions.Logging;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Crowdfunding_API.DTOs;
 
 namespace Crowdfunding_API.Controllers
 {
@@ -13,63 +18,55 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class ProjectsController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ApplicationDBContext context;
+        private readonly ILogger<ProjectsController> logger;
+        private readonly IMapper mapper;
 
-        public ProjectsController(ApplicationDBContext context)
+        public ProjectsController(ApplicationDBContext context, ILogger<ProjectsController> logger, IMapper mapper)
         {
-            _context = context;
+            this.context = context;
+            this.logger = logger;
+            this.mapper = mapper;
         }
 
         // api/Projects
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProject()
+        public async Task<ActionResult<List<ProjectDTO>>> GetProject()
         {
-            return await _context.Project.AsNoTracking().ToListAsync();
-            
+            var projects = await context.Project.AsNoTracking().ToListAsync();
+            var projectsDTOs = mapper.Map<List<ProjectDTO>>(projects);
+            return projectsDTOs;
+
         }
 
         // GET: api/Projects/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Project>> GetProject(int id)
+        [HttpGet("{id}", Name = "GetProject")]
+        public async Task<ActionResult<ProjectDTO>> GetProject(int id)
         {
-            var project = await _context.Project.FindAsync(id);
+            var project = await context.Project.FirstOrDefaultAsync(x => x.ID == id);
 
             if (project == null)
             {
+                logger.LogWarning($" Project with id {id} not found");
                 return NotFound();
+                throw new ApplicationException();
             }
 
-            return project;
+            var projectDTO = mapper.Map<ProjectDTO>(project);
+
+            return projectDTO;
         }
 
         // PUT: api/Projects/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProject(int id, Project project)
+        public async Task<ActionResult> Post([FromBody]ProjectCreationDTO projectCreation)
         {
-            if (id != project.ID)
-            {
-                return BadRequest();
-            }
+            var project = mapper.Map<Project>(projectCreation);
+            context.Add(project); 
+            await context.SaveChangesAsync();
+            var projectDTO = mapper.Map<ProjectDTO>(project);
 
-            _context.Entry(project).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProjectExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return new CreatedAtRouteResult("GetProject", new { projectDTO.ID }, projectDTO); 
         }
 
         // POST: api/Projects
@@ -77,8 +74,8 @@ namespace Crowdfunding_API.Controllers
         public async Task<ActionResult<Project>> PostProject(Project project)
         {
            
-            _context.Project.Add(project);
-            await _context.SaveChangesAsync();
+            context.Project.Add(project);
+            await context.SaveChangesAsync();
 
             return CreatedAtAction("GetProject", new { id = project.ID }, project);
            
@@ -89,21 +86,21 @@ namespace Crowdfunding_API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Project>> DeleteProject(int id)
         {
-            var project = await _context.Project.FindAsync(id);
+            var project = await context.Project.FindAsync(id);
             if (project == null)
             {
                 return NotFound();
             }
 
-            _context.Project.Remove(project);
-            await _context.SaveChangesAsync();
+            context.Project.Remove(project);
+            await context.SaveChangesAsync();
 
             return project;
         }
 
         private bool ProjectExists(int id)
         {
-            return _context.Project.Any(e => e.ID == id);
+            return context.Project.Any(e => e.ID == id);
         }
     }
 }
