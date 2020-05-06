@@ -15,6 +15,11 @@ namespace Crowdfunding_API.Helpers
             CreateMap<Project, ProjectDTO>().ReverseMap();
 
             CreateMap<ProjectCreationDTO, Project>();
+
+            CreateMap<User, UserDTO>().ReverseMap();
+
+            CreateMap<UserCreationDTO, User>()
+                .ForMember(x => x.Avatar_img, options => options.Ignore());
         }
     }
 }

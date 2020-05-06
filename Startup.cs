@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using MoviesAPI.Filters;
 using AutoMapper;
-
+using Crowdfunding_API.Services;
 
 namespace Crowdfunding_API
 {
@@ -35,7 +35,7 @@ namespace Crowdfunding_API
             services.AddAutoMapper(typeof(Startup));
 
 
-
+            services.AddTransient<IFileStorageService, AzureStorageService>();
 
 
             services.AddControllers(options => {

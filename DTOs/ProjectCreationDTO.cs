@@ -1,4 +1,6 @@
-﻿using Crowdfunding_API.Validations;
+﻿using Crowdfunding_API.Helpers;
+using Crowdfunding_API.Validations;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,10 +25,18 @@ namespace Crowdfunding_API.DTOs
         public string Country { get; set; }
 
         [Required]
-        [CreditCard]  // 16 digits
         public long Account_Number { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Duration { get; set; }
+
+
+
+
+
+
+        //finish implementation
+        [ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
+        public List<int> UserId { get; set; }
     }
 }

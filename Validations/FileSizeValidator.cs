@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MoviesAPI.Validations
+namespace Crowdfunding_API.Validations
 {
-    public class FileSizeValidator : ValidationAttribute
+    public class FileSizeValidator: ValidationAttribute
     {
         private readonly int maxFileSizeInMbs;
 
@@ -37,5 +37,6 @@ namespace MoviesAPI.Validations
 
             return ValidationResult.Success;
         }
+
     }
 }

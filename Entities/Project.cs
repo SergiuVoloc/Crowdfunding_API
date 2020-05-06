@@ -32,6 +32,9 @@ namespace Crowdfunding_API.Entities
         //Creating Foreign Key User_ID 
         public User User { get; set; }
 
+
+
+
     }
 
 

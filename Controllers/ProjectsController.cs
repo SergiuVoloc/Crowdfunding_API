@@ -11,6 +11,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Crowdfunding_API.DTOs;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 
 namespace Crowdfunding_API.Controllers
 {
@@ -21,12 +22,19 @@ namespace Crowdfunding_API.Controllers
         private readonly ApplicationDBContext context;
         private readonly ILogger<ProjectsController> logger;
         private readonly IMapper mapper;
+        /*
+        private readonly IFileStorageService fileStorageService;
+        private readonly string containerName = "projects"; // for Azure data storing
+        */
 
-        public ProjectsController(ApplicationDBContext context, ILogger<ProjectsController> logger, IMapper mapper)
+        public ProjectsController(ApplicationDBContext context, 
+            ILogger<ProjectsController> logger, 
+            IMapper mapper)
         {
             this.context = context;
             this.logger = logger;
             this.mapper = mapper;
+            
         }
 
         // api/Projects
@@ -59,43 +67,45 @@ namespace Crowdfunding_API.Controllers
 
         // PUT: api/Projects/5
         [HttpPut("{id}")]
-        public async Task<ActionResult> Post([FromBody]ProjectCreationDTO projectCreation)
+        public async Task<ActionResult> Post(int id, [FromBody]ProjectCreationDTO projectCreation)
         {
             var project = mapper.Map<Project>(projectCreation);
-            context.Add(project); 
+            project.ID = id;
+            context.Entry(project).State = EntityState.Modified;
             await context.SaveChangesAsync();
-            var projectDTO = mapper.Map<ProjectDTO>(project);
 
-            return new CreatedAtRouteResult("GetProject", new { projectDTO.ID }, projectDTO); 
+            return NoContent();
         }
 
         // POST: api/Projects
         [HttpPost]
-        public async Task<ActionResult<Project>> PostProject(Project project)
+        public async Task<ActionResult> PostProject([FromBody] ProjectCreationDTO projectCreation)
         {
-           
-            context.Project.Add(project);
+            var project = mapper.Map<Project>(projectCreation);
+            context.Add(project);
             await context.SaveChangesAsync();
+            var projectDTO = mapper.Map<ProjectDTO>(project);
 
-            return CreatedAtAction("GetProject", new { id = project.ID }, project);
+            return new CreatedAtRouteResult("GetProject", new { id = projectDTO.ID }, projectDTO);
            
 
         }
 
         // DELETE: api/Projects/{id}
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Project>> DeleteProject(int id)
+        public async Task<ActionResult> DeleteProject(int id)
         {
-            var project = await context.Project.FindAsync(id);
-            if (project == null)
+            var exists = await context.Project.AnyAsync(x => x.ID == id);
+            if (!exists == null)
             {
                 return NotFound();
             }
 
-            context.Project.Remove(project);
+            context.Remove(new Project() { ID = id});
             await context.SaveChangesAsync();
 
-            return project;
+            return NoContent();
+
         }
 
         private bool ProjectExists(int id)
