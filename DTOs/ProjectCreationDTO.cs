@@ -14,7 +14,6 @@ namespace Crowdfunding_API.DTOs
         [FirstLetterUpperCase]
         [Required]
         [StringLength(100, MinimumLength = 3)]
-        // [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         public string Title { get; set; }
 
         [Required]
@@ -32,11 +31,8 @@ namespace Crowdfunding_API.DTOs
 
 
 
-
-
-
         //finish implementation
-        [ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
-        public List<int> UserId { get; set; }
+        //[ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
+        //public List<int> UserId { get; set; }
     }
 }

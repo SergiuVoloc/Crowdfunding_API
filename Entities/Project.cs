@@ -12,7 +12,6 @@ namespace Crowdfunding_API.Entities
 
         [Required]
         [StringLength(100, MinimumLength = 3)]
-       // [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
         public string Title { get; set; }
 
         [Required]

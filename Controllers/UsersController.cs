@@ -11,6 +11,8 @@ using Crowdfunding_API.DTOs;
 using AutoMapper;
 using Crowdfunding_API.Services;
 using System.IO;
+using Microsoft.AspNetCore.JsonPatch;
+using Crowdfunding_API.Helpers;
 
 namespace Crowdfunding_API.Controllers
 {
@@ -23,7 +25,7 @@ namespace Crowdfunding_API.Controllers
         private readonly IFileStorageService fileStorageService;
         private readonly string containerName = "users";
 
-        public UsersController(ApplicationDBContext context, 
+        public UsersController(ApplicationDBContext context,
             IMapper mapper,
             IFileStorageService fileStorageService)
         {
@@ -36,9 +38,14 @@ namespace Crowdfunding_API.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<List<UserDTO>>> GetUser()
+        public async Task<ActionResult<List<UserDTO>>> GetUser([FromQuery] PaginationDTO pagination)
         {
-            var users = await context.User.ToListAsync();
+            /* for pagination */
+            var queryable = context.User.AsQueryable();
+            await HttpContext.InsertPaginationParametersInResponse(queryable, pagination.RecordsPerPage);
+            /* for pagination + queryable.Paginate(pagination) instead of context.User. */
+
+            var users = await queryable.Paginate(pagination).ToListAsync();
             return mapper.Map<List<UserDTO>>(users);
         }
 
@@ -87,7 +94,6 @@ namespace Crowdfunding_API.Controllers
 
 
 
-
         // POST: api/Users
         [HttpPost]
         public async Task<ActionResult> PostUser([FromForm] UserCreationDTO userCreation)
@@ -115,6 +121,42 @@ namespace Crowdfunding_API.Controllers
         }
 
 
+        // PATCH: api/Users/1
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> Patch(int id, [FromBody] JsonPatchDocument<UserPatchDTO> patchDocument)
+        {
+            if (patchDocument == null)
+            {
+                return BadRequest();
+            }
+
+            //retrive from db
+            var entityFromDB = await context.User.FirstOrDefaultAsync(x => x.ID == id);
+
+            if (entityFromDB == null)
+            {
+                return NotFound();
+            }
+
+            var entityDTO = mapper.Map<UserPatchDTO>(entityFromDB);
+
+            //apply changes into entityDTO
+            patchDocument.ApplyTo(entityDTO, ModelState);
+
+            //check respects adnotations
+            var isValid = TryValidateModel(entityDTO);
+
+            if (!isValid)
+            {
+                return BadRequest(ModelState);
+            }
+            // apply changes
+            mapper.Map(entityDTO, entityFromDB);
+
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
 
 
         // DELETE: api/Users/5
@@ -132,6 +174,10 @@ namespace Crowdfunding_API.Controllers
 
             return NoContent();
         }
+
+
+
+    
     }
  }
 

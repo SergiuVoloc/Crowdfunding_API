@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Crowdfunding_API.DTOs;
 using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using Crowdfunding_API.Services;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Crowdfunding_API.Controllers
 {
@@ -22,19 +24,17 @@ namespace Crowdfunding_API.Controllers
         private readonly ApplicationDBContext context;
         private readonly ILogger<ProjectsController> logger;
         private readonly IMapper mapper;
-        /*
         private readonly IFileStorageService fileStorageService;
-        private readonly string containerName = "projects"; // for Azure data storing
-        */
+        private readonly string containerName = "projects";
 
         public ProjectsController(ApplicationDBContext context, 
             ILogger<ProjectsController> logger, 
-            IMapper mapper)
+            IMapper mapper, IFileStorageService fileStorageService)
         {
             this.context = context;
             this.logger = logger;
             this.mapper = mapper;
-            
+            this.fileStorageService = fileStorageService;
         }
 
         // api/Projects
@@ -57,13 +57,25 @@ namespace Crowdfunding_API.Controllers
             {
                 logger.LogWarning($" Project with id {id} not found");
                 return NotFound();
-                throw new ApplicationException();
+                //throw new ApplicationException();
             }
 
+            return mapper.Map<ProjectDTO>(project);
+        }
+
+
+        // POST: api/Projects
+        [HttpPost]
+        public async Task<ActionResult> PostProject([FromBody] ProjectCreationDTO projectCreation)
+        {
+            var project = mapper.Map<Project>(projectCreation);
+            context.Add(project);
+            await context.SaveChangesAsync();
             var projectDTO = mapper.Map<ProjectDTO>(project);
 
-            return projectDTO;
+            return new CreatedAtRouteResult("GetProject", new { id = projectDTO.ID }, projectDTO);
         }
+
 
         // PUT: api/Projects/5
         [HttpPut("{id}")]
@@ -77,19 +89,50 @@ namespace Crowdfunding_API.Controllers
             return NoContent();
         }
 
-        // POST: api/Projects
-        [HttpPost]
-        public async Task<ActionResult> PostProject([FromBody] ProjectCreationDTO projectCreation)
+
+
+        
+
+
+        // PATCH: api/projects/1
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> Patch(int id, [FromBody] JsonPatchDocument<ProjectPatchDTO> patchDocument)
         {
-            var project = mapper.Map<Project>(projectCreation);
-            context.Add(project);
+            if (patchDocument == null)
+            {
+                return BadRequest();
+            }
+
+            //retrive from db
+            var entityFromDB = await context.Project.FirstOrDefaultAsync(x => x.ID == id);
+
+            if (entityFromDB == null)
+            {
+                return NotFound();
+            }
+
+            var entityDTO = mapper.Map<ProjectPatchDTO>(entityFromDB);
+
+            //apply changes into entityDTO
+            patchDocument.ApplyTo(entityDTO, ModelState);
+
+            //check respects adnotations
+            var isValid = TryValidateModel(entityDTO);
+
+            if (!isValid)
+            {
+                return BadRequest(ModelState);
+            }
+            // apply changes
+            mapper.Map(entityDTO, entityFromDB);
+
             await context.SaveChangesAsync();
-            var projectDTO = mapper.Map<ProjectDTO>(project);
 
-            return new CreatedAtRouteResult("GetProject", new { id = projectDTO.ID }, projectDTO);
-           
-
+            return NoContent();
         }
+
+
+
 
         // DELETE: api/Projects/{id}
         [HttpDelete("{id}")]
