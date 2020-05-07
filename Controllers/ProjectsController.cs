@@ -24,17 +24,16 @@ namespace Crowdfunding_API.Controllers
         private readonly ApplicationDBContext context;
         private readonly ILogger<ProjectsController> logger;
         private readonly IMapper mapper;
-        private readonly IFileStorageService fileStorageService;
-        private readonly string containerName = "projects";
+
 
         public ProjectsController(ApplicationDBContext context, 
             ILogger<ProjectsController> logger, 
-            IMapper mapper, IFileStorageService fileStorageService)
+            IMapper mapper)
         {
             this.context = context;
             this.logger = logger;
             this.mapper = mapper;
-            this.fileStorageService = fileStorageService;
+            
         }
 
         // api/Projects
