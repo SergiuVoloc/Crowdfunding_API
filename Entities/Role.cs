@@ -7,6 +7,6 @@ namespace Crowdfunding_API.Entities
         public int ID { get; set; }
 
         [Required]
-        public string Value { get; set; }
+        public int Value { get; set; }
     }
 }

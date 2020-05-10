@@ -20,11 +20,18 @@ namespace Crowdfunding_API.Helpers
 
             CreateMap<User, UserPatchDTO>().ReverseMap();
 
+
             CreateMap<Project, ProjectDTO>().ReverseMap();
 
             CreateMap<ProjectCreationDTO, Project>();
 
             CreateMap<Project, ProjectPatchDTO>().ReverseMap();
+
+
+            CreateMap<Payment, PaymentDTO>().ReverseMap();
+
+            CreateMap<PaymentCreationDTO, Payment>();
+
         }
     }
 }

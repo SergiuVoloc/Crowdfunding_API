@@ -4,14 +4,16 @@ using Crowdfunding_API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Crowdfunding_API.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200510123115_10_may2")]
+    partial class _10_may2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,14 +50,13 @@ namespace Crowdfunding_API.Migrations
                         .HasColumnType("int")
                         .HasMaxLength(30);
 
-                    b.Property<string>("Payment_method")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ProjectID")
+                    b.Property<int>("Payment_method")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserID")
+                    b.Property<int?>("Project_idID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("User_idID")
                         .HasColumnType("int");
 
                     b.Property<int>("Year")
@@ -63,9 +64,9 @@ namespace Crowdfunding_API.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProjectID");
+                    b.HasIndex("Project_idID");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("User_idID");
 
                     b.ToTable("Payment");
                 });
@@ -158,13 +159,13 @@ namespace Crowdfunding_API.Migrations
 
             modelBuilder.Entity("Crowdfunding_API.Entities.Payment", b =>
                 {
-                    b.HasOne("Crowdfunding_API.Entities.Project", "Project")
+                    b.HasOne("Crowdfunding_API.Entities.Project", "Project_id")
                         .WithMany()
-                        .HasForeignKey("ProjectID");
+                        .HasForeignKey("Project_idID");
 
-                    b.HasOne("Crowdfunding_API.Entities.User", "User")
+                    b.HasOne("Crowdfunding_API.Entities.User", "User_id")
                         .WithMany()
-                        .HasForeignKey("UserID");
+                        .HasForeignKey("User_idID");
                 });
 
             modelBuilder.Entity("Crowdfunding_API.Entities.Project", b =>
