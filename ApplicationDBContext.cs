@@ -17,6 +17,8 @@ namespace Crowdfunding_API
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Payment> Payment { get; set; }
+        public DbSet<Crowdfunding_API.Entities.Admin> Admin { get; set; }
+        public DbSet<Crowdfunding_API.Entities.File> File { get; set; }
 
         //public DbSet<ProjectsPayments> ProjectsPayments { get; set; }
         //public DbSet<ProjectsUsers> ProjectsUsers { get; set; }

@@ -11,7 +11,7 @@ namespace MoviesAPI.Validations
     {
         private readonly string[] validContentTypes;
 
-        private readonly string[] imageContentTypes = new string[] { "image/jpeg", "image/png", "image/jpg" };
+        private readonly string[] imageContentTypes = new string[] { "image/jpeg", "image/png", "image/jpg", "image/gif" };
 
         public ContentTypeValidator(string[] ValidContentTypes)
         {
