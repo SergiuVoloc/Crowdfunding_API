@@ -10,18 +10,20 @@ namespace Crowdfunding_API.DTOs
         public int ID { get; set; }
         public string Card_name { get; set; }
         
-        public int Card_number { get; set; }
+        public long Card_number { get; set; }
        
-        public int Month { get; set; }
+        public string Month { get; set; }
 
         public int Year { get; set; }
  
-        public int CVC { get; set; }
+        public int CVV { get; set; }
 
-        public int Amount { get; set; }
+        public long Amount { get; set; }
 
-        public string Curency { get; set; }
+        public string Currency { get; set; }
 
         public string Payment_method { get; set; }
+
+
     }
 }

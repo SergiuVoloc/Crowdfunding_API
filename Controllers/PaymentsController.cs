@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Crowdfunding_API;
 using Crowdfunding_API.Entities;
+using Microsoft.Extensions.Logging;
+using AutoMapper;
+using Crowdfunding_API.DTOs;
 
 namespace Crowdfunding_API.Controllers
 {
@@ -14,37 +17,47 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class PaymentsController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ApplicationDBContext context;
+        private readonly ILogger<ProjectsController> logger;
+        private readonly IMapper mapper;
 
-        public PaymentsController(ApplicationDBContext context)
+        public PaymentsController(ApplicationDBContext context, ILogger<ProjectsController> logger,
+            IMapper mapper)
         {
-            _context = context;
+            this.context = context;
+            this.logger = logger;
+            this.mapper = mapper;
         }
 
         // GET: api/Payments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Payment>>> GetPayment()
+        public async Task<ActionResult<List<PaymentDTO>>> GetPayment()
         {
-            return await _context.Payment.ToListAsync();
+
+            var payments = await context.Payment.AsNoTracking().ToListAsync();
+            var paymentsDTOs = mapper.Map<List<PaymentDTO>>(payments);
+            return paymentsDTOs;
+
+           
         }
 
         // GET: api/Payments/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Payment>> GetPayment(int id)
+        [HttpGet("{id}", Name = "GetPayment")]
+        public async Task<ActionResult<PaymentDTO>> GetPayment(int id)
         {
-            var payment = await _context.Payment.FindAsync(id);
+            var payment = await context.Payment.FirstOrDefaultAsync(x => x.ID == id);
 
             if (payment == null)
             {
+                logger.LogWarning($" Payment with id {id} not found");
                 return NotFound();
+                //throw new ApplicationException();
             }
 
-            return payment;
+            return mapper.Map<PaymentDTO>(payment);
         }
 
         // PUT: api/Payments/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPayment(int id, Payment payment)
         {
@@ -53,11 +66,11 @@ namespace Crowdfunding_API.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(payment).State = EntityState.Modified;
+            context.Entry(payment).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -74,37 +87,39 @@ namespace Crowdfunding_API.Controllers
             return NoContent();
         }
 
-        // POST: api/Payments
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Payment>> PostPayment(Payment payment)
-        {
-            _context.Payment.Add(payment);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPayment", new { id = payment.ID }, payment);
+
+        // POST: api/Payments
+        [HttpPost]
+        public async Task<ActionResult> PostPayment([FromBody] PaymentCreationDTO paymentCreation)
+        {
+            var payment = mapper.Map<Payment>(paymentCreation);
+            context.Add(payment);
+            await context.SaveChangesAsync();
+            var paymentDTO = mapper.Map<PaymentDTO>(payment);
+
+            return new CreatedAtRouteResult("GetPayment", new { id = paymentDTO.ID }, paymentDTO);
         }
 
         // DELETE: api/Payments/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Payment>> DeletePayment(int id)
         {
-            var payment = await _context.Payment.FindAsync(id);
+            var payment = await context.Payment.FindAsync(id);
             if (payment == null)
             {
                 return NotFound();
             }
 
-            _context.Payment.Remove(payment);
-            await _context.SaveChangesAsync();
+            context.Payment.Remove(payment);
+            await context.SaveChangesAsync();
 
             return payment;
         }
 
         private bool PaymentExists(int id)
         {
-            return _context.Payment.Any(e => e.ID == id);
+            return context.Payment.Any(e => e.ID == id);
         }
     }
 }

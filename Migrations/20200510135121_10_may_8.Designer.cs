@@ -4,14 +4,16 @@ using Crowdfunding_API;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Crowdfunding_API.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200510135121_10_may_8")]
+    partial class _10_may_8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,7 @@ namespace Crowdfunding_API.Migrations
                     b.Property<long>("Amount")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("CVV")
+                    b.Property<int>("CVC")
                         .HasColumnType("int");
 
                     b.Property<string>("Card_name")
@@ -40,13 +42,13 @@ namespace Crowdfunding_API.Migrations
                     b.Property<long>("Card_number")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("Currency")
+                    b.Property<string>("Curency")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Month")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Month")
+                        .HasColumnType("int")
+                        .HasMaxLength(30);
 
                     b.Property<string>("Payment_method")
                         .IsRequired()
