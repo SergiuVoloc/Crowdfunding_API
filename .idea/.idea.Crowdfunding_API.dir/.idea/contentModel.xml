@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\sergi\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\sergi\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API" t="IncludeRecursive">
+      <e p="ApplicationDBContext.cs" t="Include" />
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Controllers" t="Include">
+        <e p="AdminsController.cs" t="Include" />
+        <e p="FilesController.cs" t="Include" />
+        <e p="PaymentsController.cs" t="Include" />
+        <e p="ProjectsController.cs" t="Include" />
+        <e p="RolesController.cs" t="Include" />
+        <e p="UsersController.cs" t="Include" />
+      </e>
+      <e p="Crowdfunding_API.csproj" t="IncludeRecursive" />
+      <e p="DTOs" t="Include">
+        <e p="FileCreationDTO.cs" t="Include" />
+        <e p="PaginationDTO.cs" t="Include" />
+        <e p="PaymentCreationDTO.cs" t="Include" />
+        <e p="PaymentDTO.cs" t="Include" />
+        <e p="ProjectCreationDTO.cs" t="Include" />
+        <e p="ProjectDTO.cs" t="Include" />
+        <e p="ProjectPatchDTO.cs" t="Include" />
+        <e p="UserCreationDTO.cs" t="Include" />
+        <e p="UserDTO.cs" t="Include" />
+        <e p="UserPatchDTO.cs" t="Include" />
+      </e>
+      <e p="Entities" t="Include">
+        <e p="Admin.cs" t="Include" />
+        <e p="FavoriteProjects.cs" t="Include" />
+        <e p="File.cs" t="Include" />
+        <e p="Payment.cs" t="Include" />
+        <e p="Project.cs" t="Include" />
+        <e p="Role.cs" t="Include" />
+        <e p="User.cs" t="Include" />
+      </e>
+      <e p="Exceptions" t="Include">
+        <e p="EntityNotFoundException.cs" t="Include" />
+        <e p="MyExceptionFilter.cs" t="Include" />
+      </e>
+      <e p="Helpers" t="Include">
+        <e p="AutoMapperProfiles.cs" t="Include" />
+        <e p="HttpContextExtensions.cs" t="Include" />
+        <e p="QueryableExtensions.cs" t="Include" />
+        <e p="TypeBinder.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20200428193146_Initial.cs" t="Include" />
+        <e p="20200428193146_Initial.Designer.cs" t="Include" />
+        <e p="20200429071848_2.cs" t="Include" />
+        <e p="20200429071848_2.Designer.cs" t="Include" />
+        <e p="20200505170907_5_mai.cs" t="Include" />
+        <e p="20200505170907_5_mai.Designer.cs" t="Include" />
+        <e p="20200505174629_5_mai_nr1.cs" t="Include" />
+        <e p="20200505174629_5_mai_nr1.Designer.cs" t="Include" />
+        <e p="20200510122253_10_may.cs" t="Include" />
+        <e p="20200510122253_10_may.Designer.cs" t="Include" />
+        <e p="20200510122451_10_may1.cs" t="Include" />
+        <e p="20200510122451_10_may1.Designer.cs" t="Include" />
+        <e p="20200510123115_10_may2.cs" t="Include" />
+        <e p="20200510123115_10_may2.Designer.cs" t="Include" />
+        <e p="20200510123258_10_may_3.cs" t="Include" />
+        <e p="20200510123258_10_may_3.Designer.cs" t="Include" />
+        <e p="20200510123526_10_may_4.cs" t="Include" />
+        <e p="20200510123526_10_may_4.Designer.cs" t="Include" />
+        <e p="20200510133026_10_may_5.cs" t="Include" />
+        <e p="20200510133026_10_may_5.Designer.cs" t="Include" />
+        <e p="20200510133301_10_may_6.cs" t="Include" />
+        <e p="20200510133301_10_may_6.Designer.cs" t="Include" />
+        <e p="20200510133408_10_may_7.cs" t="Include" />
+        <e p="20200510133408_10_may_7.Designer.cs" t="Include" />
+        <e p="20200510135121_10_may_8.cs" t="Include" />
+        <e p="20200510135121_10_may_8.Designer.cs" t="Include" />
+        <e p="20200510140218_10_may_9.cs" t="Include" />
+        <e p="20200510140218_10_may_9.Designer.cs" t="Include" />
+        <e p="20200510140414_10_may_10.cs" t="Include" />
+        <e p="20200510140414_10_may_10.Designer.cs" t="Include" />
+        <e p="20200510140600_10_may_11.cs" t="Include" />
+        <e p="20200510140600_10_may_11.Designer.cs" t="Include" />
+        <e p="20200516152848_manyToMany.cs" t="Include" />
+        <e p="20200516152848_manyToMany.Designer.cs" t="Include" />
+        <e p="20200516174925_16mai.cs" t="Include" />
+        <e p="20200516174925_16mai.Designer.cs" t="Include" />
+        <e p="20200518075210_18maiRider.cs" t="Include" />
+        <e p="20200518075210_18maiRider.Designer.cs" t="Include" />
+        <e p="ApplicationDBContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="Crowdfunding_API.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+      </e>
+      <e p="Services" t="Include">
+        <e p="AzureStorageService.cs" t="Include" />
+        <e p="IFileStorageService.cs" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+      <e p="Validations" t="Include">
+        <e p="ContentTypeValidator.cs" t="Include" />
+        <e p="FileSizeValidator.cs" t="Include" />
+        <e p="FirstLetterUpperCaseAttribute.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

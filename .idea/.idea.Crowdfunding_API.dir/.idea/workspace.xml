@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31bf2464-a1c1-46b2-81de-e69ee154b561" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/.idea.Crowdfunding_API.dir.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crowdfunding_API.dir/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Crowdfunding_API/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Crowdfunding_API/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationDBContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AdminsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AdminsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/FilesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/FilesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/PaymentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PaymentsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ProjectsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProjectsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/RolesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/RolesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crowdfunding_API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Crowdfunding_API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/PaymentCreationDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/PaymentCreationDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/PaymentDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/PaymentDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/ProjectCreationDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/ProjectCreationDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/ProjectDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/ProjectDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/ProjectPatchDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/ProjectPatchDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/UserCreationDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/UserCreationDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/UserDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/UserDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Admin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Admin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/FavoriteProjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/FavoriteProjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/File.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/File.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Payment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Payment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/ProjectUser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Role.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/AutoMapperProfiles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/AutoMapperProfiles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200428193146_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200428193146_Initial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200429071848_2.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200429071848_2.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200505170907_5_mai.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200505170907_5_mai.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200505174629_5_mai_nr1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200505174629_5_mai_nr1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510122253_10_may.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510122253_10_may.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510122451_10_may1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510122451_10_may1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510123115_10_may2.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510123115_10_may2.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510123258_10_may_3.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510123258_10_may_3.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510123526_10_may_4.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510123526_10_may_4.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510133026_10_may_5.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510133026_10_may_5.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510133301_10_may_6.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510133301_10_may_6.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510133408_10_may_7.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510133408_10_may_7.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510135121_10_may_8.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510135121_10_may_8.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510140218_10_may_9.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510140218_10_may_9.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510140414_10_may_10.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510140414_10_may_10.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20200510140600_10_may_11.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20200510140600_10_may_11.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/ApplicationDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/ApplicationDBContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Crowdfunding_API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Crowdfunding_API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Crowdfunding_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Crowdfunding_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Crowdfunding_API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Crowdfunding_API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Relational.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Caching.Memory.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Crowdfunding_API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crowdfunding_API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Crowdfunding_API.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crowdfunding_API.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Crowdfunding_API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Helpers/AutoMapperProfiles.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/196D36F9-C400-4166-999D-7B3DB021810A/e5/5a0bc0e0/0200000Epdb.il" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ApplicationDBContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Entities/Payment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/ProjectsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/UsersController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Entities/Admin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Entities/Project.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Entities/File.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Entities/Payment.cs" />
+        <option value="$PROJECT_DIR$/Entities/Admin.cs" />
+        <option value="$PROJECT_DIR$/Entities/File.cs" />
+        <option value="$PROJECT_DIR$/Entities/Project.cs" />
+        <option value="$PROJECT_DIR$/Entities/User.cs" />
+        <option value="$PROJECT_DIR$/Controllers/UsersController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1c4SyzFkR3be38fGnAXOf7SN1g7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;sqlserver" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Crowdfunding_API">
+    <configuration name="Crowdfunding_API" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Crowdfunding_API.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="Crowdfunding_API" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Crowdfunding_API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Crowdfunding_API.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31bf2464-a1c1-46b2-81de-e69ee154b561" name="Default Changelist" comment="" />
+      <created>1589786641345</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589786641345</updated>
+      <workItem from="1589786681247" duration="3938000" />
+      <workItem from="1589793223223" duration="1311000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="636" y="157" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589794703189">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state x="636" y="157" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.46.1600.854@0.46.1600.854" timestamp="1589794703189" />
+    <state width="1557" height="220" key="GridCell.Tab.0.bottom" timestamp="1589794794893">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state width="1557" height="220" key="GridCell.Tab.0.bottom/0.46.1600.854@0.46.1600.854" timestamp="1589794794893" />
+    <state width="1557" height="220" key="GridCell.Tab.0.center" timestamp="1589794794893">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state width="1557" height="220" key="GridCell.Tab.0.center/0.46.1600.854@0.46.1600.854" timestamp="1589794794893" />
+    <state width="1557" height="220" key="GridCell.Tab.0.left" timestamp="1589794794892">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state width="1557" height="220" key="GridCell.Tab.0.left/0.46.1600.854@0.46.1600.854" timestamp="1589794794892" />
+    <state width="1557" height="220" key="GridCell.Tab.0.right" timestamp="1589794794893">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state width="1557" height="220" key="GridCell.Tab.0.right/0.46.1600.854@0.46.1600.854" timestamp="1589794794893" />
+    <state x="450" y="73" key="SettingsEditor" timestamp="1589791773581">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state x="450" y="73" key="SettingsEditor/0.46.1600.854@0.46.1600.854" timestamp="1589791773581" />
+    <state x="92" y="138" width="1416" height="670" key="VCS.FileHistoryDialog" timestamp="1589787343891">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state x="92" y="138" width="1416" height="670" key="VCS.FileHistoryDialog/0.46.1600.854@0.46.1600.854" timestamp="1589787343891" />
+    <state x="463" y="221" width="672" height="678" key="search.everywhere.popup" timestamp="1589791510347">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state x="463" y="221" width="672" height="678" key="search.everywhere.popup/0.46.1600.854@0.46.1600.854" timestamp="1589791510347" />
+  </component>
+</project>
