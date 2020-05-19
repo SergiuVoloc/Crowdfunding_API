@@ -50,7 +50,7 @@ namespace Crowdfunding_API.Controllers
         [HttpGet("{id}", Name = "GetProject")]
         public async Task<ActionResult<ProjectDTO>> GetProject(int id)
         {
-            var project = await context.Project.FirstOrDefaultAsync(x => x.ID == id);
+            var project = await context.Project.FirstOrDefaultAsync(x => x.Id == id);
 
             if (project == null)
             {
@@ -72,7 +72,7 @@ namespace Crowdfunding_API.Controllers
             await context.SaveChangesAsync();
             var projectDTO = mapper.Map<ProjectDTO>(project);
 
-            return new CreatedAtRouteResult("GetProject", new { id = projectDTO.ID }, projectDTO);
+            return new CreatedAtRouteResult("GetProject", new { id = projectDTO.Id }, projectDTO);
         }
 
 
@@ -81,7 +81,7 @@ namespace Crowdfunding_API.Controllers
         public async Task<ActionResult> Post(int id, [FromBody]ProjectCreationDTO projectCreation)
         {
             var project = mapper.Map<Project>(projectCreation);
-            project.ID = id;
+            project.Id = id;
             context.Entry(project).State = EntityState.Modified;
             await context.SaveChangesAsync();
 
@@ -103,7 +103,7 @@ namespace Crowdfunding_API.Controllers
             }
 
             //retrive from db
-            var entityFromDB = await context.Project.FirstOrDefaultAsync(x => x.ID == id);
+            var entityFromDB = await context.Project.FirstOrDefaultAsync(x => x.Id == id);
 
             if (entityFromDB == null)
             {
@@ -137,13 +137,13 @@ namespace Crowdfunding_API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProject(int id)
         {
-            var exists = await context.Project.AnyAsync(x => x.ID == id);
+            var exists = await context.Project.AnyAsync(x => x.Id == id);
             if (!exists == null)
             {
                 return NotFound();
             }
 
-            context.Remove(new Project() { ID = id});
+            context.Remove(new Project() { Id = id});
             await context.SaveChangesAsync();
 
             return NoContent();
@@ -152,7 +152,7 @@ namespace Crowdfunding_API.Controllers
 
         private bool ProjectExists(int id)
         {
-            return context.Project.Any(e => e.ID == id);
+            return context.Project.Any(e => e.Id == id);
         }
     }
 }

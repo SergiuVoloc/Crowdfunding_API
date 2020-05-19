@@ -48,7 +48,7 @@ namespace Crowdfunding_API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFile(int id, File file)
         {
-            if (id != file.ID)
+            if (id != file.Id)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace Crowdfunding_API.Controllers
             _context.File.Add(file);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetFile", new { id = file.ID }, file);
+            return CreatedAtAction("GetFile", new { id = file.Id }, file);
         }
 
         // DELETE: api/Files/5
@@ -104,7 +104,7 @@ namespace Crowdfunding_API.Controllers
 
         private bool FileExists(int id)
         {
-            return _context.File.Any(e => e.ID == id);
+            return _context.File.Any(e => e.Id == id);
         }
     }
 }

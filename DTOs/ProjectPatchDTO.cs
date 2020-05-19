@@ -26,5 +26,7 @@ namespace Crowdfunding_API.DTOs
 
         [DataType(DataType.Date)]
         public DateTime Duration { get; set; }
+
+        public int UserId { get; set; }
     }
 }

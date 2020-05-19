@@ -55,7 +55,7 @@ namespace Crowdfunding_API.Controllers
         [HttpGet("{id}", Name = "getUsers")]
         public async Task<ActionResult<UserDTO>> GetUser(int id)
         {
-            var users = await context.User.FirstOrDefaultAsync(x => x.ID == id);
+            var users = await context.User.FirstOrDefaultAsync(x => x.Id == id);
 
             if (users == null)
             {
@@ -71,7 +71,7 @@ namespace Crowdfunding_API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromForm] UserCreationDTO userCreationDTO)
         {
-            var userDB = await context.User.FirstOrDefaultAsync(x => x.ID == id);
+            var userDB = await context.User.FirstOrDefaultAsync(x => x.Id == id);
 
             if (userDB == null) { return NotFound(); }
 
@@ -115,7 +115,7 @@ namespace Crowdfunding_API.Controllers
             context.Add(user);
             await context.SaveChangesAsync();
             var userDTO = mapper.Map<UserDTO>(user);
-            return new CreatedAtRouteResult("getUsers", new { id = userDTO.ID }, userDTO);
+            return new CreatedAtRouteResult("getUsers", new { id = userDTO.Id }, userDTO);
 
 
         }
@@ -131,7 +131,7 @@ namespace Crowdfunding_API.Controllers
             }
 
             //retrive from db
-            var entityFromDB = await context.User.FirstOrDefaultAsync(x => x.ID == id);
+            var entityFromDB = await context.User.FirstOrDefaultAsync(x => x.Id == id);
 
             if (entityFromDB == null)
             {
@@ -163,13 +163,13 @@ namespace Crowdfunding_API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var exists = await context.User.AnyAsync(x => x.ID == id);
+            var exists = await context.User.AnyAsync(x => x.Id == id);
             if (!exists)
             {
                 return NotFound();
             }
 
-            context.Remove(new User() { ID = id });
+            context.Remove(new User() { Id = id });
             await context.SaveChangesAsync();
 
             return NoContent();

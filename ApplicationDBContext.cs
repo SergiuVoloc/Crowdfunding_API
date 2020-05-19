@@ -13,12 +13,34 @@ namespace Crowdfunding_API
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Project>()
+                .HasOne<User>(u => u.User)
+                .WithMany(p => p.Projects)
+                .HasForeignKey(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasOne<Role>(x => x.Role)
+                .WithMany(x => x.UserId)
+                .HasForeignKey(x => x.RoleId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+   
+
+
         public DbSet<Project> Project { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<Payment> Payment { get; set; }
-        public DbSet<Crowdfunding_API.Entities.Admin> Admin { get; set; }
-        public DbSet<Crowdfunding_API.Entities.File> File { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+        public DbSet<File> File { get; set; }
 
         //public DbSet<ProjectsPayments> ProjectsPayments { get; set; }
         //public DbSet<ProjectsUsers> ProjectsUsers { get; set; }

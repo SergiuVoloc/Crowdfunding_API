@@ -48,7 +48,7 @@ namespace Crowdfunding_API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAdmin(int id, Admin admin)
         {
-            if (id != admin.ID)
+            if (id != admin.Id)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace Crowdfunding_API.Controllers
             _context.Admin.Add(admin);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAdmin", new { id = admin.ID }, admin);
+            return CreatedAtAction("GetAdmin", new { id = admin.Id }, admin);
         }
 
         // DELETE: api/Admins/5
@@ -104,7 +104,7 @@ namespace Crowdfunding_API.Controllers
 
         private bool AdminExists(int id)
         {
-            return _context.Admin.Any(e => e.ID == id);
+            return _context.Admin.Any(e => e.Id == id);
         }
     }
 }

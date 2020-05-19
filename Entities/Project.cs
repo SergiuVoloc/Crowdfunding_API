@@ -8,7 +8,7 @@ namespace Crowdfunding_API.Entities
 {
     public class Project
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 3)]
@@ -29,11 +29,8 @@ namespace Crowdfunding_API.Entities
         public DateTime Duration { get; set; }
 
         //Creating Foreign Key User_ID 
+        public int UserId { get; set; }
         public User User { get; set; }
-
-
-
-
     }
 
 

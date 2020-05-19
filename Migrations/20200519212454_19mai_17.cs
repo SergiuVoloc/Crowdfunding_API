@@ -2,7 +2,7 @@
 
 namespace Crowdfunding_API.Migrations
 {
-    public partial class _10_may_6 : Migration
+    public partial class _19mai_17 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -8,7 +8,7 @@ namespace Crowdfunding_API.Entities
 {
     public class Payment
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 3)]

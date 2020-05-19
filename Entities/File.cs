@@ -7,9 +7,11 @@ namespace Crowdfunding_API.Entities
 {
     public class File
     {
-        public int ID { get; set; }
-        public Project Project_ID { get; set; }
+        public int Id { get; set; }
 
         public string Value { get; set; }
+
+        public Project Project { get; set; }
     }
+        
 }

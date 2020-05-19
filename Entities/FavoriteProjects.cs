@@ -7,8 +7,8 @@ namespace Crowdfunding_API.Entities
 {
     public class FavoriteProjects
     { 
-        public User User_ID { get; set; }
+        public User User { get; set; }
 
-        public Project Project_ID { get; set; }
+        public Project Project { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Crowdfunding_API.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200519145325_19mai1")]
-    partial class _19mai1
+    [Migration("20200519153958_19mai_5")]
+    partial class _19mai_5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,20 +23,23 @@ namespace Crowdfunding_API.Migrations
 
             modelBuilder.Entity("Crowdfunding_API.Entities.Admin", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Role_IDID")
+                    b.Property<int?>("RoleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Role_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Role_IDID");
+                    b.HasIndex("RoleId");
 
                     b.ToTable("Admin");
                 });
@@ -150,7 +153,7 @@ namespace Crowdfunding_API.Migrations
 
             modelBuilder.Entity("Crowdfunding_API.Entities.Role", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -158,7 +161,7 @@ namespace Crowdfunding_API.Migrations
                     b.Property<int>("Value")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Role");
                 });
@@ -183,7 +186,7 @@ namespace Crowdfunding_API.Migrations
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<int?>("RoleID")
+                    b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<string>("Surname")
@@ -193,16 +196,16 @@ namespace Crowdfunding_API.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("RoleID");
+                    b.HasIndex("RoleId");
 
                     b.ToTable("User");
                 });
 
             modelBuilder.Entity("Crowdfunding_API.Entities.Admin", b =>
                 {
-                    b.HasOne("Crowdfunding_API.Entities.Role", "Role_ID")
+                    b.HasOne("Crowdfunding_API.Entities.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("Role_IDID");
+                        .HasForeignKey("RoleId");
                 });
 
             modelBuilder.Entity("Crowdfunding_API.Entities.File", b =>
@@ -234,7 +237,7 @@ namespace Crowdfunding_API.Migrations
                 {
                     b.HasOne("Crowdfunding_API.Entities.Role", "Role")
                         .WithMany()
-                        .HasForeignKey("RoleID");
+                        .HasForeignKey("RoleId");
                 });
 #pragma warning restore 612, 618
         }

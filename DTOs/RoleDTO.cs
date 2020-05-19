@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Crowdfunding_API.Entities
+namespace Crowdfunding_API.DTOs
 {
-    public class Admin
+    public class RoleDTO
     {
         public int Id { get; set; }
-        public string Username { get; set; }
 
-        public Role Role { get; set; }
-
+        public int Value { get; set; }
     }
 }

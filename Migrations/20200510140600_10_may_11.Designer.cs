@@ -146,7 +146,7 @@ namespace Crowdfunding_API.Migrations
                     b.Property<int?>("RoleID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Surename")
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);

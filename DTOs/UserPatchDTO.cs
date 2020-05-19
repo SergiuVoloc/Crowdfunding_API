@@ -14,10 +14,12 @@ namespace Crowdfunding_API.DTOs
 
         [Required]
         [StringLength(30, MinimumLength = 3)]
-        public string Surename { get; set; }
+        public string Surname { get; set; }
 
         [Required]
         [StringLength(30, MinimumLength = 3)]
         public string Email { get; set; }
+
+        public int RoleId { get; set; }
     }
 }

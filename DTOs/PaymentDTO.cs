@@ -7,7 +7,7 @@ namespace Crowdfunding_API.DTOs
 {
     public class PaymentDTO
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Card_name { get; set; }
         
         public long Card_number { get; set; }

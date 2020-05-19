@@ -45,7 +45,7 @@ namespace Crowdfunding_API.Controllers
         [HttpGet("{id}", Name = "GetPayment")]
         public async Task<ActionResult<PaymentDTO>> GetPayment(int id)
         {
-            var payment = await context.Payment.FirstOrDefaultAsync(x => x.ID == id);
+            var payment = await context.Payment.FirstOrDefaultAsync(x => x.Id == id);
 
             if (payment == null)
             {
@@ -61,7 +61,7 @@ namespace Crowdfunding_API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPayment(int id, Payment payment)
         {
-            if (id != payment.ID)
+            if (id != payment.Id)
             {
                 return BadRequest();
             }
@@ -98,7 +98,7 @@ namespace Crowdfunding_API.Controllers
             await context.SaveChangesAsync();
             var paymentDTO = mapper.Map<PaymentDTO>(payment);
 
-            return new CreatedAtRouteResult("GetPayment", new { id = paymentDTO.ID }, paymentDTO);
+            return new CreatedAtRouteResult("GetPayment", new { id = paymentDTO.Id }, paymentDTO);
         }
 
         // DELETE: api/Payments/5
@@ -119,7 +119,7 @@ namespace Crowdfunding_API.Controllers
 
         private bool PaymentExists(int id)
         {
-            return context.Payment.Any(e => e.ID == id);
+            return context.Payment.Any(e => e.Id == id);
         }
     }
 }

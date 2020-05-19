@@ -32,6 +32,11 @@ namespace Crowdfunding_API.Helpers
 
             CreateMap<PaymentCreationDTO, Payment>();
 
+
+            CreateMap<Role, RoleDTO>().ReverseMap();
+
+            CreateMap<RoleCreationDTO, Role>();
+
         }
     }
 }
