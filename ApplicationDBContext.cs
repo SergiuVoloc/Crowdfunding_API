@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Crowdfunding_API.Entities;
 
@@ -18,15 +15,31 @@ namespace Crowdfunding_API
             modelBuilder.Entity<Project>()
                 .HasOne<User>(u => u.User)
                 .WithMany(p => p.Projects)
-                .HasForeignKey(s => s.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(s => s.UserId);
+
 
             modelBuilder.Entity<User>()
                 .HasOne<Role>(x => x.Role)
                 .WithMany(x => x.UserId)
-                .HasForeignKey(x => x.RoleId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(x => x.RoleId);
+      
 
+            //modelBuilder.Entity<Payment>()
+            //    //.HasOne<Project>(x => x.Project)
+            //    //.WithMany(x => x.Payments)
+            //    //.HasForeignKey(x => x.ProjectId)
+            //    //.OnDelete(DeleteBehavior.Cascade);
+
+            //modelBuilder.Entity<User>()
+            //    //.HasMany<Payment>(g => g.Payments)
+            //    //.WithOne(s => s.User)
+            //    //.HasForeignKey(s => s.UserId)
+            //    //.OnDelete(DeleteBehavior.Cascade);
+
+            // nu sunt necesare aceste configiurari din motiv ca EF le face automat
+            // se pun numai daca numele sunt diochete...
+
+            // de continuat cu relatiile (check if works payment  - user / project )
 
 
             base.OnModelCreating(modelBuilder);

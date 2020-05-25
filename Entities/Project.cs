@@ -31,6 +31,8 @@ namespace Crowdfunding_API.Entities
         //Creating Foreign Key User_ID 
         public int UserId { get; set; }
         public User User { get; set; }
+
+        public ICollection<Payment> Payments { get; set; }
     }
 
 

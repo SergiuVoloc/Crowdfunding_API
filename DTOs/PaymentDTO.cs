@@ -24,6 +24,7 @@ namespace Crowdfunding_API.DTOs
 
         public string Payment_method { get; set; }
 
-
+        public int UserId { get; set; }
+        public int ProjectId { get; set; }
     }
 }

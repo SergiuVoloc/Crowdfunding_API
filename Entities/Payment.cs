@@ -30,14 +30,16 @@ namespace Crowdfunding_API.Entities
         public long Amount { get; set; }
 
         [Required]
-        public string Currency { get; set; } 
+        public string Currency { get; set; }
 
-        [Required] 
+        [Required]
         public string Payment_method { get; set; }
 
-        //Creating Foreign Key User_ID 
-        public User User { get; set; }
+        //Creating Foreign Key's
 
+        public int UserId { get; set; }
+        public User User { get; set; }
+        public int ProjectId { get; set; }
         public Project Project { get; set; }
     }
 }

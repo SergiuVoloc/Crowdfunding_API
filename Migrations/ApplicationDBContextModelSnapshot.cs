@@ -213,11 +213,11 @@ namespace Crowdfunding_API.Migrations
             modelBuilder.Entity("Crowdfunding_API.Entities.Payment", b =>
                 {
                     b.HasOne("Crowdfunding_API.Entities.Project", "Project")
-                        .WithMany()
+                        .WithMany("Payments")
                         .HasForeignKey("ProjectId");
 
                     b.HasOne("Crowdfunding_API.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Payments")
                         .HasForeignKey("UserId");
                 });
 
