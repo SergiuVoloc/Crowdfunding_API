@@ -88,6 +88,9 @@ namespace Crowdfunding_API.Controllers
                         userDB.Avatar_img, userCreationDTO.Avatar_img.ContentType);
                 }
             }
+
+            await context.Database.ExecuteSqlInterpolatedAsync($"delete from FavoriteProjects where UserId = {userDB.Id}");
+
             await context.SaveChangesAsync();
             return NoContent();
         }
@@ -99,6 +102,8 @@ namespace Crowdfunding_API.Controllers
         public async Task<ActionResult> PostUser([FromForm] UserCreationDTO userCreation)
         {
             var user = mapper.Map<User>(userCreation);
+
+           
 
             if (userCreation.Avatar_img != null)
             {

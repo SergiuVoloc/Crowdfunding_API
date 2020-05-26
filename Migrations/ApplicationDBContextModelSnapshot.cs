@@ -39,6 +39,21 @@ namespace Crowdfunding_API.Migrations
                     b.ToTable("Admin");
                 });
 
+            modelBuilder.Entity("Crowdfunding_API.Entities.FavoriteProjects", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "ProjectId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("FavoriteProjects");
+                });
+
             modelBuilder.Entity("Crowdfunding_API.Entities.File", b =>
                 {
                     b.Property<int>("Id")
@@ -92,10 +107,10 @@ namespace Crowdfunding_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProjectId")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.Property<int>("Year")
@@ -203,6 +218,21 @@ namespace Crowdfunding_API.Migrations
                         .HasForeignKey("RoleId");
                 });
 
+            modelBuilder.Entity("Crowdfunding_API.Entities.FavoriteProjects", b =>
+                {
+                    b.HasOne("Crowdfunding_API.Entities.Project", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Crowdfunding_API.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Crowdfunding_API.Entities.File", b =>
                 {
                     b.HasOne("Crowdfunding_API.Entities.Project", "Project")
@@ -214,11 +244,15 @@ namespace Crowdfunding_API.Migrations
                 {
                     b.HasOne("Crowdfunding_API.Entities.Project", "Project")
                         .WithMany("Payments")
-                        .HasForeignKey("ProjectId");
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("Crowdfunding_API.Entities.User", "User")
                         .WithMany("Payments")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Crowdfunding_API.Entities.Project", b =>
@@ -226,7 +260,7 @@ namespace Crowdfunding_API.Migrations
                     b.HasOne("Crowdfunding_API.Entities.User", "User")
                         .WithMany("Projects")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -235,7 +269,7 @@ namespace Crowdfunding_API.Migrations
                     b.HasOne("Crowdfunding_API.Entities.Role", "Role")
                         .WithMany("UserId")
                         .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

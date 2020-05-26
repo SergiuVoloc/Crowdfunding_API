@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Crowdfunding_API.Migrations
 {
-    public partial class _20_mai : Migration
+    public partial class _26_mai_0 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -59,8 +59,7 @@ namespace Crowdfunding_API.Migrations
                         name: "FK_User_Role_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Role",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -81,6 +80,29 @@ namespace Crowdfunding_API.Migrations
                     table.PrimaryKey("PK_Project", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Project_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FavoriteProjects",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(nullable: false),
+                    ProjectId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FavoriteProjects", x => new { x.UserId, x.ProjectId });
+                    table.ForeignKey(
+                        name: "FK_FavoriteProjects_Project_ProjectId",
+                        column: x => x.ProjectId,
+                        principalTable: "Project",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FavoriteProjects_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
@@ -121,8 +143,8 @@ namespace Crowdfunding_API.Migrations
                     Amount = table.Column<long>(nullable: false),
                     Currency = table.Column<string>(nullable: false),
                     Payment_method = table.Column<string>(nullable: false),
-                    UserId = table.Column<int>(nullable: true),
-                    ProjectId = table.Column<int>(nullable: true)
+                    UserId = table.Column<int>(nullable: false),
+                    ProjectId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -131,20 +153,23 @@ namespace Crowdfunding_API.Migrations
                         name: "FK_Payment_Project_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Project",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Payment_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Admin_RoleId",
                 table: "Admin",
                 column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FavoriteProjects_ProjectId",
+                table: "FavoriteProjects",
+                column: "ProjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_File_ProjectId",
@@ -176,6 +201,9 @@ namespace Crowdfunding_API.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Admin");
+
+            migrationBuilder.DropTable(
+                name: "FavoriteProjects");
 
             migrationBuilder.DropTable(
                 name: "File");

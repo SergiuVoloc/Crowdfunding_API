@@ -32,6 +32,8 @@ namespace Crowdfunding_API.Entities
 
         public ICollection<Payment> Payments { get; set; }
 
+        public List<FavoriteProjects> FavoriteProjects { get; set; }
+
 
     }
 }

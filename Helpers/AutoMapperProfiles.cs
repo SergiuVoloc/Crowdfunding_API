@@ -16,7 +16,8 @@ namespace Crowdfunding_API.Helpers
             CreateMap<User, UserDTO>().ReverseMap();
 
             CreateMap<UserCreationDTO, User>()
-                .ForMember(x => x.Avatar_img, options => options.Ignore());
+                    .ForMember(x => x.Avatar_img, options => options.Ignore())
+                    .ForMember(x => x.FavoriteProjects, options => options.MapFrom(MapFavoriteProjects));
 
             CreateMap<User, UserPatchDTO>().ReverseMap();
 
@@ -37,6 +38,16 @@ namespace Crowdfunding_API.Helpers
 
             CreateMap<RoleCreationDTO, Role>();
 
+        }
+
+        private List<FavoriteProjects> MapFavoriteProjects(UserCreationDTO userCreationDTO, User user)
+        {
+            var result = new List<FavoriteProjects>();
+            foreach (var id in userCreationDTO.FavoriteProjectIds)
+            {
+                result.Add(new FavoriteProjects() { ProjectId = id });
+            }
+            return result;
         }
     }
 }
