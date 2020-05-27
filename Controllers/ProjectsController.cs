@@ -21,12 +21,12 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class ProjectsController : ControllerBase
     {
-        private readonly ApplicationDBContext context;
+        private readonly ApplicationDbContext context;
         private readonly ILogger<ProjectsController> logger;
         private readonly IMapper mapper;
 
 
-        public ProjectsController(ApplicationDBContext context, 
+        public ProjectsController(ApplicationDbContext context, 
             ILogger<ProjectsController> logger, 
             IMapper mapper)
         {
@@ -38,6 +38,7 @@ namespace Crowdfunding_API.Controllers
 
         // api/Projects
         [HttpGet]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<List<ProjectDTO>>> GetProject()
         {
             var projects = await context.Project.AsNoTracking().ToListAsync();

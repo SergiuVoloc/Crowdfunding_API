@@ -17,11 +17,11 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class PaymentsController : ControllerBase
     {
-        private readonly ApplicationDBContext context;
+        private readonly ApplicationDbContext context;
         private readonly ILogger<ProjectsController> logger;
         private readonly IMapper mapper;
 
-        public PaymentsController(ApplicationDBContext context, ILogger<ProjectsController> logger,
+        public PaymentsController(ApplicationDbContext context, ILogger<ProjectsController> logger,
             IMapper mapper)
         {
             this.context = context;

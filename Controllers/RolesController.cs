@@ -17,9 +17,9 @@ namespace Crowdfunding_API.Controllers
     public class RolesController : ControllerBase
     {
         private readonly IMapper mapper;
-        private readonly ApplicationDBContext dbContext;
+        private readonly ApplicationDbContext dbContext;
 
-        public RolesController(ApplicationDBContext dbContext, IMapper mapper)
+        public RolesController(ApplicationDbContext dbContext, IMapper mapper)
         {
             this.mapper = mapper;
             this.dbContext = dbContext;

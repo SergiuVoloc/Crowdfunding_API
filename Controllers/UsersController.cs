@@ -20,12 +20,12 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly ApplicationDBContext context;
+        private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
         private readonly IFileStorageService fileStorageService;
         private readonly string containerName = "users";
 
-        public UsersController(ApplicationDBContext context,
+        public UsersController(ApplicationDbContext context,
             IMapper mapper,
             IFileStorageService fileStorageService)
         {

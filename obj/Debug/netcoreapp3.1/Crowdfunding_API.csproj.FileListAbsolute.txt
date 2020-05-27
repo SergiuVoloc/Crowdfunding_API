@@ -159,3 +159,12 @@ D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfundi
 D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\obj\Debug\netcoreapp3.1\Crowdfunding_API.csproj.CoreCompileInputs.cache
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\obj\Debug\netcoreapp3.1\Crowdfunding_API.MvcApplicationPartsAssemblyInfo.cache
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Univer\P.A.W__(Proiectarea_aplicatiilor_Web)\Crowdfunding(Backend)\Crowdfunding_API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll

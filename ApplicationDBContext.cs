@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Crowdfunding_API
 {
-    public class ApplicationDBContext : IdentityDbContext 
+    public class ApplicationDbContext : IdentityDbContext 
     {
-        public ApplicationDBContext (DbContextOptions<ApplicationDBContext> options) : base(options)
+        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 

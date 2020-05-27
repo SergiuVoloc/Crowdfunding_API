@@ -14,9 +14,9 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public FilesController(ApplicationDBContext context)
+        public FilesController(ApplicationDbContext context)
         {
             _context = context;
         }

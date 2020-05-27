@@ -14,9 +14,9 @@ namespace Crowdfunding_API.Controllers
     [ApiController]
     public class AdminsController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public AdminsController(ApplicationDBContext context)
+        public AdminsController(ApplicationDbContext context)
         {
             _context = context;
         }
